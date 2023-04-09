@@ -1,5 +1,4 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
 
 const Category = (props) => {
   if (props?.pos === "top") {

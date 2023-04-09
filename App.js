@@ -5,6 +5,7 @@ import Location from "./src/components/location/Location";
 import Constants from "expo-constants";
 import Search from "./src/components/search/Search";
 import Categories from "./src/components/categories/Categories";
+
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>

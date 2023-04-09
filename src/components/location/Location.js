@@ -11,7 +11,7 @@ const Location = () => {
       <GooglePlacesAutocomplete
         placeholder="Search"
         query={{
-          key: API_KEY,
+          key: API_KEY || "", //! key is needed
           language: "en",
         }}
         onPress={(data) => {

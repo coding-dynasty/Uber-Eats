@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleSheet, View } from "react-native";
 import Category from "./sub-components/Category";
 import categories from "./categories.json";
