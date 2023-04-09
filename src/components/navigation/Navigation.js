@@ -12,7 +12,7 @@ const Navigation = () => {
   });
 
   return (
-    <View style={styles.navigation}>
+    <View style={styles.container}>
       <View>
         <Text>Deliver now</Text>
         <Text style={styles.location}>
@@ -80,7 +80,7 @@ const Navigation = () => {
 };
 
 const styles = StyleSheet.create({
-  navigation: {
+  container: {
     flexDirection: "row",
     justifyContent: "space-between",
   },

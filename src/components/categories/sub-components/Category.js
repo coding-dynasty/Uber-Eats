@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 20,
     flex: 1,
-    margin: 5,
+    marginHorizontal: 2,
   },
   bottom__container: {
     borderRadius: 10,
