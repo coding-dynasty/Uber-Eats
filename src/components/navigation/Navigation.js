@@ -1,10 +1,10 @@
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import Entypo from "react-native-vector-icons/Entypo";
-import { useState } from "react";
+import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Entypo from 'react-native-vector-icons/Entypo';
+import { useState } from 'react';
 
-const Navigation = () => {
+const Navigation = ({ location }) => {
   const [isActive, setIsActive] = useState({
     opt1: true,
     opt2: false,
@@ -16,7 +16,12 @@ const Navigation = () => {
       <View>
         <Text>Deliver now</Text>
         <Text style={styles.location}>
-          London <AntDesign name="caretdown" size={10} color={"#000"} />
+          {location}{' '}
+          <AntDesign
+            name='caretdown'
+            size={10}
+            color={'#000'}
+          />
         </Text>
       </View>
       <View style={styles.options}>
@@ -33,9 +38,9 @@ const Navigation = () => {
           }
         >
           <AntDesign
-            name="exclamationcircle"
+            name='exclamationcircle'
             size={20}
-            color={isActive.opt1 ? "#fff" : "#000"}
+            color={isActive.opt1 ? '#fff' : '#000'}
           />
         </TouchableOpacity>
         {/* opt2 */}
@@ -51,9 +56,9 @@ const Navigation = () => {
           }
         >
           <FontAwesome5
-            name="walking"
+            name='walking'
             size={20}
-            color={isActive.opt2 ? "#fff" : "#000"}
+            color={isActive.opt2 ? '#fff' : '#000'}
           />
         </TouchableOpacity>
         {/* opt3 */}
@@ -69,9 +74,9 @@ const Navigation = () => {
           }
         >
           <Entypo
-            name="shop"
+            name='shop'
             size={20}
-            color={isActive.opt3 ? "#fff" : "#000"}
+            color={isActive.opt3 ? '#fff' : '#000'}
           />
         </TouchableOpacity>
       </View>
@@ -81,30 +86,30 @@ const Navigation = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   options: {
-    flexDirection: "row",
-    backgroundColor: "#eee",
+    flexDirection: 'row',
+    backgroundColor: '#eee',
     borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   location: {
-    fontWeight: 600,
+    fontWeight: '600',
     marginTop: 5,
   },
   icon: {
     paddingVertical: 10,
     paddingHorizontal: 15,
     width: 50,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   active: {
-    backgroundColor: "#000",
-    color: "#fff",
+    backgroundColor: '#000',
+    color: '#fff',
     borderRadius: 10,
   },
 });

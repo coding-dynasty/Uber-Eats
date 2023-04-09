@@ -1,6 +1,6 @@
-import { StyleSheet, View } from "react-native";
-import Category from "./sub-components/Category";
-import categories from "./categories.json";
+import { StyleSheet, View } from 'react-native';
+import Category from './sub-components/Category';
+import categories from './categories.json';
 
 const Categories = () => {
   return (
@@ -33,12 +33,12 @@ export default Categories;
 
 const styles = StyleSheet.create({
   top: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   bottom: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });

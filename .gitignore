@@ -16,5 +16,5 @@ web-build/
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
 pics
-key.js
 yelp_api_key.js
+google_places_api_key.js
