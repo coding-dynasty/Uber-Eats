@@ -1,7 +1,7 @@
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { API_KEY } from "./key";
+import { API_KEY } from "../../../key";
 
 const Location = () => {
   const [location, setLocation] = useState("");
