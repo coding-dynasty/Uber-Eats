@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
   },
   card__top: {
     position: "relative",
-    backgroundColor: "red",
     marginBottom: 10,
   },
   card__image: {
