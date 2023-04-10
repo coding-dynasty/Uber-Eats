@@ -1,6 +1,13 @@
 import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import SettingsScreen from '../tabs/SettingsScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+
 const Food = ({ data, setIsVisible }) => {
+  // console.log(navigation);
+  const navigation = useNavigation();
+
   const d = {
     alias: 'shanti-indisches-restaurant-berlin',
     categories: [
@@ -32,9 +39,13 @@ const Food = ({ data, setIsVisible }) => {
     transactions: [],
     url: 'https://www.yelp.com/biz/shanti-indisches-restaurant-berlin?adjust_creative=3Bm1lcL_gMhAnZOXmX7tIw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3Bm1lcL_gMhAnZOXmX7tIw',
   };
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => setIsVisible(true)}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Details')}
+        // onPress={() => setIsVisible(true)}
+      >
         <View style={styles.card__top}>
           <Image
             style={styles.card__image}

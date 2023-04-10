@@ -8,12 +8,17 @@ import { useEffect, useState } from 'react';
 import { YELP_API_KEY } from '../../../yelp_api_key';
 import { BottomSheet } from '@rneui/themed';
 import { ListItem } from 'react-native-elements';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SettingsScreen from '../tabs/SettingsScreen';
 
 const Home = () => {
   const [location, setLocation] = useState('london');
   const [data, setData] = useState([]);
   const [shouldRefresh, setshouldRefresh] = useState(true);
   const [state, setState] = useState('');
+
+  const Stack = createNativeStackNavigator();
 
   useEffect(() => {
     const ENDPOINT_URI = `https://api.yelp.com/v3/businesses/search?location=${location}&term=food&categories=bars&open_now=true&sort_by=distance&limit=10`;
@@ -49,6 +54,8 @@ const Home = () => {
       onPress: () => setIsVisible(false),
     },
   ];
+
+  // const Stack = createNativeStackNavigator();
 
   return (
     <View style={styles.container__wrapper}>
@@ -92,6 +99,26 @@ const Home = () => {
           />
         )}
       />
+      {/* <Stack.Navigator>
+        <Stack.Screen
+          name='Settings'
+          component={SettingsScreen}
+        />
+      </Stack.Navigator> */}
+      {/* <Tab.Screen
+            name='Home'
+            component={Home}
+            options={{
+              tabBarIcon: () => (
+                <Entypo
+                  name='home'
+                  color={'#000'}
+                  size={20}
+                />
+              ),
+              tabBarBadge: Math.round(Math.random() * 10),
+            }}
+          /> */}
       <BottomSheet
         modalProps={{}}
         isVisible={isVisible}

@@ -1,16 +1,45 @@
+import { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import Constants from 'expo-constants';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SettingsScreen from './src/components/tabs/SettingsScreen';
-import { NavigationContainer } from '@react-navigation/native';
-import Entypo from 'react-native-vector-icons/Entypo';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from './src/components/Home/Home';
+import Detailes from './src/components/details/Detailes';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { Account, Client, ID } from 'appwrite';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import client from './appwrite.config';
 
 const App = () => {
   const Tab = createBottomTabNavigator();
+
+  const Stack = createNativeStackNavigator();
+
+  useEffect(() => {
+    const account = new Account(client);
+
+    // Register User
+    // account
+    //   .create(
+    //     ID.unique(),
+    //     `me${Math.round(Math.random() * 1000)}@example.com`,
+    //     'password',
+    //     'Jane Doe'
+    //   )
+    //   .then(
+    //     (response) => {
+    //       console.log(response);
+    //     },
+    //     (error) => {
+    //       console.log(error);
+    //     }
+    //   );
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
@@ -82,6 +111,10 @@ const App = () => {
               tabBarBadge: Math.round(Math.random() * 10),
             }}
           />
+          <Tab.Screen
+            name='Details'
+            component={DetailsScreen}
+          />
         </Tab.Navigator>
       </NavigationContainer>
       <StatusBar style='auto' />
@@ -100,3 +133,16 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+const DetailsScreen = () => {
+  const Stack = createNativeStackNavigator();
+
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='Details'
+        component={Detailes}
+      />
+    </Stack.Navigator>
+  );
+};

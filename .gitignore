@@ -18,3 +18,4 @@ web-build/
 pics
 yelp_api_key.js
 google_places_api_key.js
+appwrite.config.js
